@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Agenda;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth; 
 
 class AgendaController extends Controller
 {
@@ -12,9 +13,17 @@ class AgendaController extends Controller
      */
     public function index()
     {
+        // Obtener todas las agendas
         $agendas = Agenda::all();
-        return view('agendas.index', compact('agendas'));
+    
+        // Verificar si el usuario está autenticado usando el helper auth()
+        $isAuthenticated = Auth::check();  // Debería funcionar correctamente
+    
+        // Pasar ambas variables a la vista
+        return view('agendas.index', compact('agendas', 'isAuthenticated'));
     }
+    
+
 
     /**
      * Show the form for creating a new resource.

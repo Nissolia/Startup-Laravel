@@ -1,15 +1,14 @@
-<?php
+<?php 
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
     /**
@@ -21,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',  // Añadir 'role' aquí
     ];
 
     /**
@@ -45,4 +45,21 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Verifica si el usuario es un administrador.
+     */
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    /**
+     * Verifica si el usuario es un trabajador.
+     */
+    public function isWorker()
+    {
+        return $this->role === 'worker';
+    }
+  
 }
