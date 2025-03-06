@@ -20,6 +20,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::resource('agendas', AgendaController::class);
-Route::resource('reuniones', ReunionesController::class);
+Route::resource('reunions', ReunionesController::class);
 Route::resource('salas', SalaController::class);
 require __DIR__.'/auth.php';

@@ -9,12 +9,12 @@ class Reunion extends Model
     // Relación con Agenda (Una reunión pertenece a una agenda)
     public function agenda()
     {
-        return $this->belongsTo(Agenda::class, 'agendas_id');
+        return $this->belongsTo(Agenda::class, 'id');
     }
 
     // Relación con Sala (Una reunión pertenece a una sala)
     public function sala()
     {
-        return $this->belongsTo(Sala::class, 'salas_id');
+        return $this->belongsTo(Sala::class, 'id');
     }
 }

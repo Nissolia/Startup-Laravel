@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('reunions', function (Blueprint $table) {
             $table->bigIncrements('ìd');
             // id de persona cuando pida la reunion
-            $table->unsignedBigInteger('agendas_id');
+            $table->unsignedBigInteger('clientes_id');
             $table->unsignedBigInteger('salas_id');
             $table->date('fecha');
             $table->timestamps();
 
-            $table->foreign('agendas_id')->references('id')->on('agendas');
+            $table->foreign('clientes_id')->references('id')->on('clientes');
             $table->foreign('salas_id')->references('id')->on('salas');
             
         });

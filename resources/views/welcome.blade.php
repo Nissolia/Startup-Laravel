@@ -40,12 +40,15 @@
                         @endauth
                         {{-- navegador usual --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('agendas') }}">Agenda</a>
+                            <a class="nav-link" href="{{ url('agendas') }}">Agendados</a>
                         </li>
 
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('salas') }}">Salas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('reunions') }}">Reuniones</a>
                         </li>
                         {{-- si es administrador --}}
                         @auth
@@ -94,9 +97,8 @@
                     <div class="overlay"></div>
                     <div class="position-absolute top-50 start-50 translate-middle text-white text-center">
                         <a class="navbar-brand fw-bold text-hero" href="{{ url('/') }}">
-                            <i class="bi bi-distribute-horizontal"></i> STARTUP
-                        </a>
-                        <p class="fs-4">Optimiza la gestión de salas agendadas y usuarios con nuestra plataforma.</p>
+                            <i class="bi bi-distribute-horizontal"></i> STARTUP               </a>
+                        <p class="fs-4">Clientes y las salas disponibles en el espacio Startup.</p>
                     </div>
                 </div>
             </div>
