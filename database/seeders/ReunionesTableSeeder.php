@@ -9,15 +9,16 @@ class ReunionesTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('reuniones')->insert([
-            'agendas_id' => 1, // ID de la agenda (persona)
-            'salas_id' => 1,   // ID de la sala
+        DB::table('reunions')->insert([
+            'cliente_id' => 1,  // Nombre correcto de la columna
+            'sala_id' => 1,      // Nombre correcto de la columna
             'fecha' => '2025-03-10',
         ]);
+        
 
-        DB::table('reuniones')->insert([
-            'agendas_id' => 2,
-            'salas_id' => 2,
+        DB::table('reunions')->insert([
+            'cliente_id' => 2,
+            'sala_id' => 2,
             'fecha' => '2025-03-11',
         ]);
         

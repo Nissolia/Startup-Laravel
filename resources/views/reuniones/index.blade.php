@@ -30,11 +30,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($reunions as $reunion)
+            @foreach ($reuniones as $reunion)
                 <tr>
-                    <td>{{ $reunion->nombre }}</td>
-                    <td>{{ $reunion->capacidad }}</td>
-                    <td>{{ $reunion->proyector ? 'Sí' : 'No' }}</td>
+                    <td>{{ $reunion->cliente->name ?? 'No asignado' }}</td>
+                    <td>{{ $reunion->sala->nombre ?? 'No asignado' }}</td>
+                    <td>{{ $reunion->fecha}}</td>
+                    
                     @auth
                     
                     @if (auth()->user()->isAdmin())
@@ -53,11 +54,11 @@
                 @endif
                 @endauth
                 <!-- Incluir modal de edición y eliminación para cada reunion -->
-                @include('reunions.info')
+                {{-- @include('reunions.info') --}}
             @endforeach
         </tbody>
     </table>
 
     <!-- Modal para crear una nueva reunion -->
-    @include('reunions.create')
+    {{-- @include('reunions.create') --}}
 @endsection

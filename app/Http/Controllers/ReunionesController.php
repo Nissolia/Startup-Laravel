@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class ReunionesController extends Controller
 {
     public function index()
+    
     {
         // Obtener todas las reuniones con las relaciones
         $reuniones = Reunion::with(['agenda', 'sala'])->get();
