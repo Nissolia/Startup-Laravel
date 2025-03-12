@@ -47,9 +47,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('salas') }}">Salas</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ url('reunions') }}">Reuniones</a>
-                        </li>
+                        </li> --}}
                         {{-- si es administrador --}}
                         @auth
 
